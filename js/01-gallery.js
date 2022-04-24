@@ -40,4 +40,13 @@ function zoomOnClick(e) {
 	`);
 
   instance.show();
+
+  const closeImgOnEsc = e => {
+    e.preventDefault();
+
+    if (e.key === 'Escape') {
+      instance.close();
+    }
+  };
+  gallery.addEventListener('keydown', closeImgOnEsc);
 }
